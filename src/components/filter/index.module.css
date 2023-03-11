@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 17.58%;
+    right: 0;
+    background-color:#9FAB44;
+    width: 68.75%;
+    height: 6.84%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.wrapper > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2.42%;
+    margin-right: 9%;
+    width: 20.2%;
+    height: 71.43%;
+    border-radius: 15px;
+}
+
+.wrapper > div > span {
+    color: #FAF2E1;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.wrapper > div:hover {
+    box-shadow: 2px 2px 20px 2px #FAF2E1;
+}
+
+.wrapper > div:active {
+    background: #F7BD78;
+    border-radius: 15px;    
+}

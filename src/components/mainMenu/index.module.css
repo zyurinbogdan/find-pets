@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 29%;
+    background-color: #9FAB44;
+    height: 100vh;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.wrapper > figure {
+    width: 160px;
+    height: 80px;
+    background-color: aliceblue;
+    margin-top: 45px;
+    margin-left: 71px;
+    margin-bottom: 55px;
+}
+
+.route {
+    display: flex;
+    width: 77%;
+    height: 6.8%;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.route > img {
+    margin-left: 28%;
+}
+
+.route > span {
+    color: #FAF2E1;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    margin-left: 8%;
+    cursor: pointer;
+}
+
+.route:hover {
+    box-shadow: 2px 2px 20px 2px #FAF2E1;
+}
+
+.activeRoute {
+    display: flex;
+    width: 77%;
+    height: 6.8%;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #F7BD78;
+}
+
+.activeRoute > span {
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    margin-left: 8%;
+    cursor: pointer;
+}
+
+.activeRoute > img {
+    margin-left: 28%;
+}

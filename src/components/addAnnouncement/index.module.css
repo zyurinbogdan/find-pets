@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 22%;
+    left: 31.25%;
+    width: 63.89%;
+    height: 70%;
+    background-color: #F7BD78;
+    border-radius: 30px;
+}
+
+.input {
+    display: flex;
+    padding-left: 7.85%;
+    width: 60%;
+    height: 10.74%;
+    border-radius: 15px 0 0 15px;
+    margin-top: 3%;
+    background-color: #FAF2E1;
+}
+
+.input > img {
+    margin-right: 7.85%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(50%);
+}
+
+input {
+    color: #5F6629;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    outline: none;
+    background-color: #FAF2E1;
+}
+
+.inputBreed {
+    display: flex;
+    padding-left: 14%;
+    width: 60%;
+    height: 10.74%;
+    border-radius: 15px 0 0 15px;
+    margin-top: 3%;
+    background-color: #FAF2E1;
+    color: #5F6629;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    outline: none;
+}
+
+.submit {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 30.33%;
+    height: 10.74%;
+    border-radius: 15px 0 0 15px;
+    background-color: #9FAB44;
+    color: #FFFCB4;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btnConfirm {
+    position: absolute;
+    bottom: 0;
+}
