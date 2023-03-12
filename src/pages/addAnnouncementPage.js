@@ -6,7 +6,6 @@ import { Filter } from "../components/filter"
 export const AddAnnouncementPage = () => {
   return (
     <>
-      <Search />
       <AddAnnouncement />
     </>
   );

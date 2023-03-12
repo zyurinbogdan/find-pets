@@ -12,10 +12,10 @@ form {
     flex-direction: column;
     align-items: end;
     position: absolute;
-    top: 22%;
+    top: 8%;
     left: 31.25%;
     width: 63.89%;
-    height: 70%;
+    height: 85%;
     background-color: #F7BD78;
     border-radius: 30px;
 }
@@ -23,7 +23,7 @@ form {
 .input {
     display: flex;
     padding-left: 7.85%;
-    width: 60%;
+    width: 50%;
     height: 10.74%;
     border-radius: 15px 0 0 15px;
     margin-top: 3%;
@@ -34,7 +34,7 @@ form {
     margin-right: 7.85%;
     width: 20px;
     height: 20px;
-    transform: translateY(50%);
+    transform: translateY(110%);
 }
 
 input {
@@ -48,7 +48,7 @@ input {
 .inputBreed {
     display: flex;
     padding-left: 14%;
-    width: 60%;
+    width: 50%;
     height: 10.74%;
     border-radius: 15px 0 0 15px;
     margin-top: 3%;
@@ -60,8 +60,7 @@ input {
 }
 
 .submit {
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 3%;
     width: 30.33%;
     height: 10.74%;
     border-radius: 15px 0 0 15px;
@@ -72,7 +71,19 @@ input {
     cursor: pointer;
 }
 
+
 .btnConfirm {
     position: absolute;
-    bottom: 0;
+    width: 400px;
+    height: 50px;
+    background-color: #9FAB44;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 29%;
+    cursor: pointer;
+    color: #FFFCB4;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
 }
+
+

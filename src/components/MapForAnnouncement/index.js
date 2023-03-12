@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 import { AddMarker } from "./addMarker/addMarker";
 
 
-export const MapForAnnouncement = () => {
+export const MapForAnnouncement = (hideMap) => {
   const [coords, setCoords] = useState([52.44118, 30.98785]);
   return (
       <MapContainer className={styles.wrapper} center={coords} zoom={13}>

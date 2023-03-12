@@ -9,6 +9,7 @@ export const MarkersList = ({data}) => {
   const dataArr = Object.entries(data);
 
 
+
   return (<>
     {dataArr.map((marker) => <AnnouncementMarker data={marker}></AnnouncementMarker>)}
     </>

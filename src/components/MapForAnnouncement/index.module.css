@@ -8,11 +8,12 @@
 }
 .wrapper {
     position: absolute;
-    left: 31.25%;
-    bottom: 12.5%;
+    left: 50%;
+    bottom: 60%;
+    transform: translate(-50%, 50%);
     width: 400px;
     height: 300px;
-    border-radius: 10%;
+    border-radius: 10% 10% 0 0;
     overflow: hidden;
     cursor: default;
 }

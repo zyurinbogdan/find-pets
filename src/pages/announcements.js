@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Search } from "../components/search";
 import { Filter } from "../components/filter";
 import { AnnouncementsList } from "../components/AnnouncementsList";
-import { app } from "../utils/base";
-import { getDatabase, ref, get, child, onValue } from "firebase/database";
+import { ref, get, child, onValue } from "firebase/database";
+import { db } from "../utils/base";
 
 export const Announcements = () => {
-  const dbRef = ref(getDatabase());
+  const dbRef = ref(db);
   const [data, setData] = useState([]);
 
   useEffect(() => {

@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./index.module.css";
-import { app } from "../../utils/base";
-import { getDatabase, ref, get, child, onValue } from "firebase/database";
+import { ref, get, child } from "firebase/database";
 import { MarkersList } from "./markersList";
+import { db } from "../../utils/base";
 
 export const MapComponent = () => {
   const [coords, setCoords] = useState([52.44118, 30.98785]);
 
-  const dbRef = ref(getDatabase());
+  const dbRef = ref(db);
   const [data, setData] = useState([]);
 
   useEffect(() => {
