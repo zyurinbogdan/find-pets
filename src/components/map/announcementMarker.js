@@ -1,6 +1,7 @@
 import { Icon } from "leaflet";
 import React, { useState, useEffect } from "react";
-import { Marker, useMapEvent } from "react-leaflet";
+import { Marker } from "react-leaflet";
+import styles from "../map/index.module.css"
 
 export const AnnouncementMarker = ({ data }) => {
   const [coords, setCoords] = useState(null);
@@ -8,8 +9,9 @@ export const AnnouncementMarker = ({ data }) => {
   let coordsArr = data[1].coords.split(',');
   useEffect(() => setCoords(coordsArr.map(string => +string)), []);
   const customIcon = new Icon({
-      iconUrl: "https://cdn-icons-png.flaticon.com/128/2776/2776067.png",
-      iconSize: [38, 38],
+      iconUrl: data[1].image,
+      iconSize: [70, 70],
+      
   });
 
   return <>

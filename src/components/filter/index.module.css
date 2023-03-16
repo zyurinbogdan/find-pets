@@ -20,7 +20,7 @@
     border-bottom-left-radius: 15px;
 }
 
-.wrapper > div {
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,19 +29,18 @@
     width: 20.2%;
     height: 71.43%;
     border-radius: 15px;
-}
-
-.wrapper > div > span {
     color: #FAF2E1;
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
 }
 
-.wrapper > div:hover {
+
+
+.btn:hover {
     box-shadow: 2px 2px 20px 2px #FAF2E1;
 }
 
-.wrapper > div:active {
+.activeBtn {
     background: #F7BD78;
     border-radius: 15px;    
 }

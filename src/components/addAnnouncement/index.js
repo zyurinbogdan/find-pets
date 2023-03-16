@@ -7,7 +7,7 @@ import vectorUser from '../../assets/img/VectorUser.png';
 import vectorPhone from '../../assets/img/VectorPhone.png';
 import { MapForAnnouncement } from "../MapForAnnouncement";
 import { useSelector } from "react-redux";
-import { selectCoordinates } from "../../redux/slices/coordinates";
+import { selectCoordinates } from "../../redux/slices/coordinatesSlice";
 import { db } from "../../utils/base";
 
 
@@ -15,16 +15,21 @@ export const AddAnnouncement = () => {
     const { register, handleSubmit } = useForm();
     const [mapIsShown, setMapIsShown] = useState(false);
     const {coordinates} = useSelector(selectCoordinates);
-    console.log(coordinates)
     const onSubmit = async data => {
         const announcementRef = ref(db, 'announcement/');
-        await push(announcementRef, {
-            name: data.name,
-            phone: data.phone,
-            coords: String(coordinates),
-            kind: data.kind,
-            breed: data.breed,
-        });
+        const file = data.file[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            push(announcementRef, {
+                name: data.name,
+                phone: data.phone,
+                coords: String(coordinates),
+                kind: data.kind,
+                breed: data.breed,
+                image: reader.result,
+            });
+        }
     };
     
     const showMap = () => {
@@ -35,9 +40,6 @@ export const AddAnnouncement = () => {
         setMapIsShown(false);
     };
 
-    const file = (e) => {
-        console.log(e)
-    };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} >
@@ -62,7 +64,7 @@ export const AddAnnouncement = () => {
             <input className={styles.inputBreed} type='text' {...register("kind")} placeholder="Вид"/>
             <input className={styles.inputBreed} type='text' {...register("breed")} placeholder="Порода"/>
             <input className={styles.submit} type="submit"/>
-            <input className={styles.uploadImg} type='file' {...register('file')} placeholder="Загрузить фото" onChange={file}></input>
+            <input className={styles.uploadImg} type='file' {...register('file')} placeholder="Загрузить фото"></input>
             {mapIsShown ? <><MapForAnnouncement/> <button className={styles.btnConfirm} onClick={hideMap}> Подтвердить </button> </> : null}
         </form>
     );

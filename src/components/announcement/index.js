@@ -3,10 +3,11 @@ import { app } from "../../utils/base";
 import styles from "./index.module.css"
 
 export const Announcement = ({data}) => {
+    console.log(data)
     return (
         <div className={styles.wrapper}>
             <figure className={styles.img}>
-                <img alt="alal"/>
+                <img src={data[1].image} alt="image"/>
             </figure>
             <div className={styles.kind}>
                 <span>{data[1].kind}</span>

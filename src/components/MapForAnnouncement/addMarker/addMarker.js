@@ -2,7 +2,7 @@ import { Icon } from "leaflet";
 import React, { useState } from "react";
 import { Marker, useMapEvent } from "react-leaflet";
 import { useDispatch } from "react-redux";
-import { changeCoordinates } from "../../../redux/slices/coordinates";
+import { changeCoordinates } from "../../../redux/slices/coordinatesSlice";
 
 export const AddMarker = () => {
   const dispatch = useDispatch();
