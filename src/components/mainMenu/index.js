@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import styles from './index.module.css';
 import vectorImg from '../../assets/img/Vector.png';
 import vectoraddImg from '../../assets/img/Vectoradd.png';
@@ -11,8 +11,6 @@ import foundLogo from '../../assets/img/foundlogo.png'
 
 export const MainMenu = () => {
     const activeClassName = ({isActive}) => isActive ? styles.activeRoute: styles.route;
-    const navigate = useNavigate();
-
     return (
         <>
             <div className={styles.wrapper}>

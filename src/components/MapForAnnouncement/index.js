@@ -4,7 +4,6 @@ import "leaflet/dist/leaflet.css";
 import styles from "./index.module.css";
 import { AddMarker } from "./addMarker/addMarker";
 
-
 export const MapForAnnouncement = (hideMap) => {
   const [coords, setCoords] = useState([52.44118, 30.98785]);
   return (

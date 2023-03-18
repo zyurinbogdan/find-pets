@@ -8,10 +8,8 @@ import { db } from "../../utils/base";
 
 export const MapComponent = () => {
   const [coords, setCoords] = useState([52.44118, 30.98785]);
-
   const dbRef = ref(db);
   const [data, setData] = useState([]);
-
   useEffect(() => {
     get(child(dbRef, `announcement`))
       .then((snapshot) => {

@@ -14,7 +14,6 @@ export const AnnouncementsList = ({data}) => {
                         .toLowerCase()
                         .includes(filter.filter) && 
                         ann.props.data[1].breed.toLowerCase().includes(search.search));
-
     return (
         <div className={styles.wrapper}>
             {filteredList}

@@ -1,9 +1,7 @@
 import React from "react";
-import { app } from "../../utils/base";
 import styles from "./index.module.css"
 
 export const Announcement = ({data}) => {
-    console.log(data)
     return (
         <div className={styles.wrapper}>
             <figure className={styles.img}>

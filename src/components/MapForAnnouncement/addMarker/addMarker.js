@@ -11,15 +11,12 @@ export const AddMarker = () => {
     setPos([e.latlng.lat, e.latlng.lng])
     dispatch(changeCoordinates([e.latlng.lat, e.latlng.lng]));
   });
-
   const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/2776/2776067.png",
     iconSize: [38, 38],
   });
-
   if (pos.length === 0) {
     return null;
   }
-
   return <Marker position={pos} icon={customIcon}></Marker>;
 };

@@ -34,7 +34,7 @@ form {
     margin-right: 7.85%;
     width: 20px;
     height: 20px;
-    transform: translateY(110%);
+    transform: translateY(160%);
 }
 
 input {
@@ -79,7 +79,7 @@ input {
     background-color: #9FAB44;
     transform: translateX(-50%);
     left: 50%;
-    bottom: 29%;
+    bottom: 36%;
     cursor: pointer;
     color: #FFFCB4;
     font-family: 'Nunito', sans-serif;

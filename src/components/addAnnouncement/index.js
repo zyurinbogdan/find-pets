@@ -16,7 +16,7 @@ export const AddAnnouncement = () => {
     const { register, handleSubmit } = useForm();
     const [mapIsShown, setMapIsShown] = useState(false);
     const {coordinates} = useSelector(selectCoordinates);
-    const [previewImg, setPreviewImg] = useState(null);
+    const [previewImg, setPreviewImg] = useState(VectorUploadImg);
     const onSubmit = async data => {
         const announcementRef = ref(db, 'announcement/');
         const file = data.file[0];
@@ -33,15 +33,20 @@ export const AddAnnouncement = () => {
             });
         }
     };
-    
     const showMap = () => {
         setMapIsShown(true);
     };
-    
     const hideMap = () => {
         setMapIsShown(false);
     };
-
+    const preview = (input) => {
+        const reader = new FileReader();
+        const file = input.target.files[0];
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            setPreviewImg(reader.result);
+        };
+    };
     return (
         <form onSubmit={handleSubmit(onSubmit)} >
             <figure></figure>
@@ -65,8 +70,8 @@ export const AddAnnouncement = () => {
             <input className={styles.inputBreed} type='text' {...register("kind")} placeholder="Вид"/>
             <input className={styles.inputBreed} type='text' {...register("breed")} placeholder="Порода"/>
             <input className={styles.submit} type="submit"/>
-            <label htmlFor="uploadImg" className={styles.uploadImgLabel} ><img src={VectorUploadImg}/></label>
-            <input type='file' {...register('file')} id='uploadImg'className={styles.uploadImgInput}></input>
+            <label htmlFor="uploadImg" className={styles.uploadImgLabel} ><img src={previewImg}/></label>
+            <input type='file' {...register('file')} id='uploadImg'className={styles.uploadImgInput} onChange={preview}></input>
             {mapIsShown ? <><MapForAnnouncement/> <button className={styles.btnConfirm} onClick={hideMap}> Подтвердить </button> </> : null}
         </form>
     );
