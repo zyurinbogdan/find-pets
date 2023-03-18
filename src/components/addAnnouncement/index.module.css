@@ -86,4 +86,24 @@ input {
     font-size: 20px;
 }
 
+.uploadImgLabel {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    height: 50%;
+    background-color: #FAF2E1;
+}
 
+.uploadImgLabel > img {
+    margin-top: 33%;
+    margin-left: 45%;
+    cursor: pointer;
+}
+
+.uploadImgInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}

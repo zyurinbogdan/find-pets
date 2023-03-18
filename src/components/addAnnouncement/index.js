@@ -5,6 +5,7 @@ import { ref, push } from "firebase/database";
 import styles from './index.module.css'
 import vectorUser from '../../assets/img/VectorUser.png';
 import vectorPhone from '../../assets/img/VectorPhone.png';
+import VectorUploadImg from '../../assets/img/VectorUploadImg.png';
 import { MapForAnnouncement } from "../MapForAnnouncement";
 import { useSelector } from "react-redux";
 import { selectCoordinates } from "../../redux/slices/coordinatesSlice";
@@ -15,6 +16,7 @@ export const AddAnnouncement = () => {
     const { register, handleSubmit } = useForm();
     const [mapIsShown, setMapIsShown] = useState(false);
     const {coordinates} = useSelector(selectCoordinates);
+    const [previewImg, setPreviewImg] = useState(null);
     const onSubmit = async data => {
         const announcementRef = ref(db, 'announcement/');
         const file = data.file[0];
@@ -40,7 +42,6 @@ export const AddAnnouncement = () => {
         setMapIsShown(false);
     };
 
-
     return (
         <form onSubmit={handleSubmit(onSubmit)} >
             <figure></figure>
@@ -64,7 +65,8 @@ export const AddAnnouncement = () => {
             <input className={styles.inputBreed} type='text' {...register("kind")} placeholder="Вид"/>
             <input className={styles.inputBreed} type='text' {...register("breed")} placeholder="Порода"/>
             <input className={styles.submit} type="submit"/>
-            <input className={styles.uploadImg} type='file' {...register('file')} placeholder="Загрузить фото"></input>
+            <label htmlFor="uploadImg" className={styles.uploadImgLabel} ><img src={VectorUploadImg}/></label>
+            <input type='file' {...register('file')} id='uploadImg'className={styles.uploadImgInput}></input>
             {mapIsShown ? <><MapForAnnouncement/> <button className={styles.btnConfirm} onClick={hideMap}> Подтвердить </button> </> : null}
         </form>
     );

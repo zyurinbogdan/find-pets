@@ -12,16 +12,14 @@ export const Filter = () => {
     const filterDog = () => {
         dispatch(changeFilter('собака'));
     };
-    const filterAnother = () => {
-        dispatch(changeFilter('другое'));
+    const filterReset = () => {
+        dispatch(changeFilter(''));
     };
-
-
     return (
         <div className={styles.wrapper}>
             <div onClick={filterCat} className={styles.btn}>Кот</div>
             <div onClick={filterDog} className={styles.btn}>Собака</div>
-            <div onClick={filterAnother} className={styles.btn}>Другое</div>            
+            <div onClick={filterReset} className={styles.btn}>Сбросить</div>            
         </div>
     );
 };

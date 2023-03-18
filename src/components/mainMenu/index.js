@@ -5,7 +5,9 @@ import vectorImg from '../../assets/img/Vector.png';
 import vectoraddImg from '../../assets/img/Vectoradd.png';
 import vectoranImg from '../../assets/img/Vectoran.png';
 import vectorhelpImg from '../../assets/img/Vectorhelp.png';
-import vectorhelpsmallImg from '../../assets/img/Vectorhelpsmall.png'
+import logo from '../../assets/img/logo.png';
+import animalLogo from '../../assets/img/animalslogo.png';
+import foundLogo from '../../assets/img/foundlogo.png'
 
 export const MainMenu = () => {
     const activeClassName = ({isActive}) => isActive ? styles.activeRoute: styles.route;
@@ -15,7 +17,9 @@ export const MainMenu = () => {
         <>
             <div className={styles.wrapper}>
                 <figure>
-                    <img src="URL" alt="альтернативный текст" />
+                    <img src={logo}/>
+                    <img src={foundLogo}/>
+                    <img src={animalLogo}/>
                 </figure>
                 <NavLink to='/' className={activeClassName}><img src={vectorImg}/><span>Главная</span></NavLink>
                 <NavLink to='/announcements' className={activeClassName}><img src={vectoranImg}/><span>Объявления</span></NavLink>
