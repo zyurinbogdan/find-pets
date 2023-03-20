@@ -18,6 +18,11 @@
 }
 
 .wrapper > figure {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'logo found'
+                         'logo animal';
     width: 260px;
     height: 80px;
     margin-top: 45px;
@@ -25,10 +30,26 @@
     margin-bottom: 55px;
 }
 
+.logo {
+    grid-area: logo;
+}
+.animalLogo {
+    grid-area: animal;
+}
+
+.foundLogo {
+    margin-top: 40px;
+    grid-area: found;
+}
+
+.navWrapper {
+    height: 70%;
+}
+
 .route {
     display: flex;
     width: 77%;
-    height: 6.8%;
+    height: 9%;
     align-items: center;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -55,7 +76,7 @@
 .activeRoute {
     display: flex;
     width: 77%;
-    height: 6.8%;
+    height: 9%;
     align-items: center;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -74,4 +95,61 @@
 
 .activeRoute > img {
     margin-left: 28%;
+}
+
+@media screen and (max-width: 391px) {
+    .wrapper {
+        width: 390px;
+        height: 170px;
+        background-color: #9FAB44;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .navWrapper {
+        width: 390px;
+        height: 55px;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        background-color: #9FAB44;
+        border-radius: 30px 30px 0px 0px;
+    }
+    
+    .route {
+        display: flex;
+        padding-top: 10px;
+        width: 50px;
+        height: 45px;
+        background-color: #9FAB44;
+        transition: all .1s ease-in-out;
+    }
+    .route > span {
+        display: none;
+    }
+    .route > img {
+        padding-left: 2px;
+        padding-top: 5px;
+        width: 21px;
+    }
+    
+    .activeRoute {
+        display: flex;
+        margin-top: 10px;
+        padding-top: 5px;
+        width: 50px;
+        height: 45px;
+        border-radius: 15px 15px 0px 0px;
+        background-color: #F7BD78;
+    }
+    
+    .activeRoute > span {
+        display: none;
+    }
+    
+    .activeRoute > img {
+        padding-bottom: 10px;
+        padding-left: 2px;
+        width: 21px;
+    }
 }

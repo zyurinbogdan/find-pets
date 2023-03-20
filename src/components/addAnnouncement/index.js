@@ -5,7 +5,7 @@ import { ref, push } from "firebase/database";
 import styles from './index.module.css'
 import vectorUser from '../../assets/img/VectorUser.png';
 import vectorPhone from '../../assets/img/VectorPhone.png';
-import VectorUploadImg from '../../assets/img/VectorUploadImg.png';
+import VectorUploadImg from '../../assets/img/VectorUploadImg1.png';
 import { MapForAnnouncement } from "../MapForAnnouncement";
 import { useSelector } from "react-redux";
 import { selectCoordinates } from "../../redux/slices/coordinatesSlice";
@@ -13,7 +13,7 @@ import { db } from "../../utils/base";
 
 
 export const AddAnnouncement = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const [mapIsShown, setMapIsShown] = useState(false);
     const {coordinates} = useSelector(selectCoordinates);
     const [previewImg, setPreviewImg] = useState(VectorUploadImg);
@@ -58,7 +58,7 @@ export const AddAnnouncement = () => {
                 <img src={vectorPhone} alt='phone'></img>
                 <input  type='text' {...register("phone")} placeholder="Ваш телефон"/>
             </div>
-            <div className={styles.input} onClick={showMap}>
+            <div className={errors.coords ? styles.inputErr : styles.input} onClick={showMap}>
                 <img src={vectorMarker}/>
                 <input type='text' 
                     className={styles.inputCoords} 
@@ -67,11 +67,11 @@ export const AddAnnouncement = () => {
                     {...register("coords")} 
                 />
             </div>
-            <input className={styles.inputBreed} type='text' {...register("kind")} placeholder="Вид"/>
+            <input className={errors.kind ? styles.inputBreedErr : styles.inputBreed} type='text' {...register("kind", {required: true})} placeholder="Вид"/>
             <input className={styles.inputBreed} type='text' {...register("breed")} placeholder="Порода"/>
             <input className={styles.submit} type="submit"/>
             <label htmlFor="uploadImg" className={styles.uploadImgLabel} ><img src={previewImg}/></label>
-            <input type='file' {...register('file')} id='uploadImg'className={styles.uploadImgInput} onChange={preview}></input>
+            <input type='file' {...register('file', {required: true})} id='uploadImg'className={styles.uploadImgInput} onChange={preview}></input>
             {mapIsShown ? <><MapForAnnouncement/> <button className={styles.btnConfirm} onClick={hideMap}> Подтвердить </button> </> : null}
         </form>
     );

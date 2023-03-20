@@ -41,6 +41,60 @@
 }
 
 .activeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2.42%;
+    margin-right: 9%;
+    width: 20.2%;
+    height: 71.43%;
+    border-radius: 15px;
     background: #F7BD78;
-    border-radius: 15px;    
+    color: #5F6629;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 391px) {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 257px;
+        right: 0;
+        background-color:#9FAB44;
+        width: 375px;
+        height: 27px;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+    
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2.42%;
+        margin-right: 9%;
+        width: 20.2%;
+        height: 71.43%;
+        border-radius: 15px;
+        color: #FAF2E1;
+        font-family: 'Nunito', sans-serif;
+        font-size: 10px;
+    }
+
+    .activeBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2.42%;
+        margin-right: 9%;
+        width: 20.2%;
+        height: 71.43%;
+        border-radius: 15px;
+        background: #F7BD78;
+        color: #5F6629;
+        font-family: 'Nunito', sans-serif;
+        font-size: 10px;
+    }
 }

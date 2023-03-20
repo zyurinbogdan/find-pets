@@ -30,11 +30,29 @@ form {
     background-color: #FAF2E1;
 }
 
+.inputErr{
+    display: flex;
+    padding-left: 7.85%;
+    width: 50%;
+    height: 10.74%;
+    border-radius: 15px 0 0 15px;
+    margin-top: 3%;
+    background-color: #FAF2E1;
+    border: 2px solid red;
+}
+
+.inputErr > img {
+    margin-right: 7.85%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(110%);
+}
+
 .input > img {
     margin-right: 7.85%;
     width: 20px;
     height: 20px;
-    transform: translateY(160%);
+    transform: translateY(110%);
 }
 
 input {
@@ -54,6 +72,20 @@ input {
     margin-top: 3%;
     background-color: #FAF2E1;
     color: #5F6629;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    outline: none;
+}
+.inputBreedErr {
+    display: flex;
+    padding-left: 14%;
+    width: 50%;
+    height: 10.74%;
+    border-radius: 15px 0 0 15px;
+    margin-top: 3%;
+    background-color: #FAF2E1;
+    color: #5F6629;
+    border: 2px solid red;
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
     outline: none;
@@ -88,17 +120,17 @@ input {
 
 .uploadImgLabel {
     position: absolute;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%;
-    height: 50%;
+    left: 17%;
+    top: 45%;
+    transform: translate(-30%, -50%);
     background-color: #FAF2E1;
+    width: 40%;
+    height: 40%;
 }
 
 .uploadImgLabel > img {
-    margin-top: 33%;
-    margin-left: 45%;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -106,4 +138,129 @@ input {
     opacity: 0;
     width: 0;
     height: 0;
+}
+
+@media screen and (max-width: 391px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        position: absolute;
+        left: 27px;
+        top: 205px;
+        width: 336px;
+        height: 550px;
+        background-color: #F7BD78;
+        border-radius: 30px;
+    }
+    
+    .input {
+        display: flex;
+        padding-left: 7.85%;
+        width: 80%;
+        height: 6%;
+        border-radius: 0;
+        margin-top: 3%;
+        background-color: #FAF2E1;
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .inputErr{
+        display: flex;
+        padding-left: 7.85%;
+        width: 80%;
+        height: 6%;
+        border-radius: 0 10px 10px 0;
+        margin-top: 3%;
+        background-color: #FAF2E1;
+        border: 2px solid red;
+    }
+    
+    .inputErr > img {
+        margin-right: 7.85%;
+        width: 20px;
+        height: 20px;
+        transform: translateY(110%);
+    }
+    
+    .input > img {
+        margin-right: 7.85%;
+        width: 10px;
+        height: 10px;
+        transform: translateY(110%);
+    }
+    
+    input {
+        color: #5F6629;
+        font-family: 'Nunito', sans-serif;
+        font-size: 10px;
+        outline: none;
+        background-color: #FAF2E1;
+    }
+    
+    .inputBreed {
+        display: flex;
+        padding-left: 14%;
+        width: 80%;
+        height: 6%;
+        border-radius: 0 10px 10px 0;
+        margin-top: 3%;
+        background-color: #FAF2E1;
+        color: #5F6629;
+        font-family: 'Nunito', sans-serif;
+        font-size: 10px;
+        outline: none;
+    }
+    .inputBreedErr {
+        display: flex;
+        padding-left: 14%;
+        width: 80%;
+        height: 6%;
+        border-radius: 0 10px 10px 0;
+        margin-top: 3%;
+        background-color: #FAF2E1;
+        color: #5F6629;
+        border: 2px solid red;
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+        outline: none;
+    }
+    
+    .submit {
+        margin-bottom: 8%;
+        width: 80%;
+        height: 6%;
+        border-radius: 0 10px 10px 0;
+        background-color: #9FAB44;
+        color: #FFFCB4;
+        font-family: 'Nunito', sans-serif;
+        font-size: 10px;
+        cursor: pointer;
+    }
+    
+    
+    .btnConfirm {
+        position: absolute;
+        width: 390px;
+        height: 50px;
+        background-color: #9FAB44;
+        transform: translateX(-50%);
+        bottom: 34%;
+        cursor: pointer;
+        color: #FFFCB4;
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+    }
+    
+    .uploadImgLabel {
+        position: absolute;
+        transform: translate(-30%, -50%);
+        background-color: #FAF2E1;
+        width: 220px;
+        height: 171px;
+        left: 120px;
+        top: 140px;
+    }
+
 }

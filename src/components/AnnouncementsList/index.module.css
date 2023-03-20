@@ -19,6 +19,37 @@
     padding: 20px;
     justify-content: space-evenly;
 }
-.wrapper::-webkit-scrollbar { 
-    width: 0; 
+::-webkit-scrollbar { 
+    background-color: #FAF2E1;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #9FAB44;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 391px) {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        width: 360px;
+        height: 480px;
+        left: 0;
+        top: 309px;
+        overflow-y: scroll;
+        padding: 20px;
+        padding-left: 30px;
+        justify-content: space-evenly;
+    }
+    ::-webkit-scrollbar { 
+        background-color: #FAF2E1;
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #9FAB44;
+        border-radius: 10px;
+    }
 }

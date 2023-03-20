@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Search } from "../components/search";
 import { Filter } from "../components/filter";
 import { AnnouncementsList } from "../components/AnnouncementsList";
-import { ref, get, child, onValue } from "firebase/database";
+import { ref, get, child } from "firebase/database";
 import { db } from "../utils/base";
 
 export const Announcements = () => {

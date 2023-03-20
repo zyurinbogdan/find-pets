@@ -17,5 +17,17 @@
     border-radius: 15px;
 }
 
+@media screen and (max-width: 391px) {
+    .wrapper {
+        position: absolute;
+        left: 4%;
+        bottom: 10%;
+        width: 360px;
+        height: 435px;
+        overflow: hidden;
+        cursor: default;
+        border-radius: 15px;
+    }
+}
 
 

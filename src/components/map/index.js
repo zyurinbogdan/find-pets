@@ -7,7 +7,6 @@ import { MarkersList } from "./markersList";
 import { db } from "../../utils/base";
 
 export const MapComponent = () => {
-  const [coords, setCoords] = useState([52.44118, 30.98785]);
   const dbRef = ref(db);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -24,7 +23,7 @@ export const MapComponent = () => {
       });
   }, []);
   return (
-      <MapContainer className={styles.wrapper} center={coords} zoom={13}>
+      <MapContainer className={styles.wrapper} center={[52.44118, 30.98785]} zoom={13}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

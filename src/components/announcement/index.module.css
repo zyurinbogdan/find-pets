@@ -26,6 +26,12 @@
     overflow: hidden;
 }
 
+.img > img {
+    height: 194px;
+    width: 100%;
+    overflow: hidden;
+}
+
 .kind {
     position: absolute;
     display: flex;
@@ -57,3 +63,4 @@
     font-family: 'Nunito', sans-serif;
     color: #62692a;
 }
+
