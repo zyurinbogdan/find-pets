@@ -6,6 +6,8 @@ import styles from './index.module.css'
 import vectorUser from '../../assets/img/VectorUser.png';
 import vectorPhone from '../../assets/img/VectorPhone.png';
 import VectorUploadImg from '../../assets/img/VectorUploadImg1.png';
+import kindOfAnimals from '../../assets/img/kindOfAnimals.png'
+import breed from '../../assets/img/breed.png'
 import { MapForAnnouncement } from "../MapForAnnouncement";
 import { useSelector } from "react-redux";
 import { selectCoordinates } from "../../redux/slices/coordinatesSlice";
@@ -17,11 +19,11 @@ export const AddAnnouncement = () => {
     const [mapIsShown, setMapIsShown] = useState(false);
     const {coordinates} = useSelector(selectCoordinates);
     const [previewImg, setPreviewImg] = useState(VectorUploadImg);
-    const onSubmit = async data => {
+    const onSubmit = data => {
         const announcementRef = ref(db, 'announcement/');
         const file = data.file[0];
         const reader = new FileReader();
-        reader.readAsDataURL(file)
+        reader.readAsDataURL(file);
         reader.onloadend = () => {
             push(announcementRef, {
                 name: data.name,
@@ -31,7 +33,7 @@ export const AddAnnouncement = () => {
                 breed: data.breed,
                 image: reader.result,
             });
-        }
+        };
     };
     const showMap = () => {
         setMapIsShown(true);
@@ -49,7 +51,6 @@ export const AddAnnouncement = () => {
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)} >
-            <figure></figure>
             <div className={styles.input}>
                 <img src={vectorUser}></img>
                 <input type='text'{...register("name")} placeholder="Ваше имя"/>
@@ -67,10 +68,16 @@ export const AddAnnouncement = () => {
                     {...register("coords")} 
                 />
             </div>
-            <input className={errors.kind ? styles.inputBreedErr : styles.inputBreed} type='text' {...register("kind", {required: true})} placeholder="Вид"/>
-            <input className={styles.inputBreed} type='text' {...register("breed")} placeholder="Порода"/>
+            <div className={errors.kind ? styles.inputErr : styles.input}>
+                <img src={kindOfAnimals} alt='kind'></img>
+                <input  type='text' {...register("kind", {required: true})} placeholder="Вид"/>
+            </div>
+            <div className={styles.input}>
+                <img src={breed} alt='kind'></img>
+                <input type='text' {...register("breed")} placeholder="Порода"/>
+            </div>
             <input className={styles.submit} type="submit"/>
-            <label htmlFor="uploadImg" className={styles.uploadImgLabel} ><img src={previewImg}/></label>
+            <label htmlFor="uploadImg" className={errors.file ? styles.uploadImgLabelErr : styles.uploadImgLabel} ><img src={previewImg}/></label>
             <input type='file' {...register('file', {required: true})} id='uploadImg'className={styles.uploadImgInput} onChange={preview}></input>
             {mapIsShown ? <><MapForAnnouncement/> <button className={styles.btnConfirm} onClick={hideMap}> Подтвердить </button> </> : null}
         </form>

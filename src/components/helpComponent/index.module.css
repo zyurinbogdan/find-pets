@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: absolute;
+    left: 31.25%;
+    top: 8%;
+    width: 63.89%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F7BD78;
+    border-radius: 30px;
+}
+
+.wrapper > h1 {
+    align-self: center;
+    font-family: 'Nunito', sans-serif;
+    color: #555555e2;
+    margin-top: 3%;
+}
+
+.wrapper > form {
+    margin-top: 3%;
+    width: 60%;
+    left: 0;
+    display: flex;
+    align-items: start;
+    
+}
+.wrapper > form > input, .wrapper > form > textarea {
+    width: 80%;
+    height: 10.74%;
+    border-radius: 0 15px 15px 0;
+    background-color: #FAF2E1;
+}
+
+.wrapper > form > p {
+    margin-top: 3%;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    color: #555555e2;
+}
+
+.wrapper > form > textarea {
+    height: 30%;
+}
+
+.wrapper > form > .submit {
+    margin-top: 7%;
+    width: 50%;
+    height: 11%;
+    border-radius: 0 15px 15px 0;
+    background-color: #9FAB44;
+    color: #FFFCB4;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.wrapper > img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 5%;
+    top: 22%;
+}

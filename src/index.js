@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainMenu } from "./components/mainMenu";
 import { Announcements } from "./pages/announcements";
 import { AddAnnouncementPage } from "./pages/addAnnouncementPage";
+import { HelpPage } from "./pages/help";
 import { store } from "./redux";
 import { Provider } from "react-redux";
 
@@ -18,6 +19,7 @@ root.render(
           <Route path="/" element={<MainPage />} />
           <Route path="announcements" element={<Announcements />} />
           <Route path="addannouncement" element={<AddAnnouncementPage />} />
+          <Route path="help" element={<HelpPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
