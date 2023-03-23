@@ -15,7 +15,7 @@ export const AnnouncementsList = ({data}) => {
                         ann.props.data[1].kind.toLowerCase().includes(search.search.toLowerCase())));
     return (
         <div className={styles.wrapper}>
-            {filteredList}
+            {filteredList.length ? filteredList : <p className={styles.noAnnouncements}>Нет объявлений</p>}
         </div>
     );
 };

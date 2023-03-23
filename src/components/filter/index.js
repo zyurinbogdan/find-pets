@@ -14,7 +14,7 @@ export const Filter = () => {
         setSelected(2);
         dispatch(changeFilter('собака'));
     };
-    const filterReset = () => {
+    const filterReset = (e) => {
         setSelected(3);
         dispatch(changeFilter(''));
     };

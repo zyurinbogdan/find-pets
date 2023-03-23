@@ -19,6 +19,13 @@
     padding: 20px;
     justify-content: space-evenly;
 }
+
+.noAnnouncements {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: #555555bc;
+}
+
 ::-webkit-scrollbar { 
     background-color: #FAF2E1;
     width: 10px;
@@ -51,5 +58,9 @@
     ::-webkit-scrollbar-thumb {
         background-color: #9FAB44;
         border-radius: 10px;
+    }
+
+    .noAnnouncements {
+        font-size: 15px;
     }
 }
