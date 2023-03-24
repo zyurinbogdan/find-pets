@@ -71,3 +71,36 @@
     right: 5%;
     top: 22%;
 }
+
+@media screen and (max-width: 391px) {
+    .wrapper {
+        position: absolute;
+        left: 27px;
+        top: 205px;
+        width: 336px;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        background-color: #F7BD78;
+        border-radius: 30px;
+    }
+
+    .wrapper > h1 {
+        font-size: 25px;
+    }
+    
+    .wrapper > form {
+        margin-top: 3%;
+        left: 0;
+        top: 50px;
+        width: 336px;
+        height: 450px;
+        display: flex;
+        align-items: start;
+        
+    }
+
+    .wrapper > img {
+        display: none;
+    }
+}
